@@ -122,3 +122,508 @@
       align-items: center;
       gap: 6px;
     }
+
+    h1 span.emoji {
+      font-size: 22px;
+    }
+
+    h2 {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .date-strip {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .hero-note span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* SECTIONS / CARDS */
+
+    .section-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 14px 14px 12px 14px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border);
+    }
+
+    .section-header-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .section-title {
+      font-weight: 600;
+      font-size: 15px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .section-date {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 11px;
+      margin-bottom: 6px;
+    }
+
+    .section-card p {
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .subheading {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+      margin-top: 6px;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-bottom: 6px;
+    }
+
+    ul li {
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    /* BILDER – 3:2, RUNDE KANTER */
+
+    .image-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .image-row::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .image-row::-webkit-scrollbar-thumb {
+      background: #d1d5db;
+      border-radius: 999px;
+    }
+
+    .image-card {
+      flex: 1;
+      min-width: 64%;
+      max-width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #e5e7eb;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+      position: relative;
+      aspect-ratio: 3 / 2;
+    }
+
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.22s ease-out;
+    }
+
+    .image-card:hover img {
+      transform: scale(1.04);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--muted);
+      padding-bottom: 10px;
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 90;
+      padding: 10px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 88vh;
+      border-radius: 16px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      font-size: 30px;
+      color: #e5e7eb;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    /* SCROLL FADE */
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBIL-JUSTERINGER */
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px 8px 16px 8px;
+      }
+
+      .sticky-bar {
+        padding-inline: 10px;
+        border-radius: 999px;
+      }
+
+      .sticky-title {
+        font-size: 12px;
+      }
+
+      .sticky-dates {
+        font-size: 10px;
+      }
+
+      .hero-card {
+        padding: 16px 14px 14px 14px;
+        border-radius: 20px;
+      }
+
+      h1 {
+        font-size: 21px;
+      }
+
+      h2 {
+        font-size: 12px;
+      }
+
+      .hero-note {
+        font-size: 11px;
+      }
+
+      .section-card {
+        border-radius: 18px;
+        padding: 12px 11px 10px 11px;
+      }
+
+      .section-header-row {
+        flex-wrap: wrap;
+      }
+
+      .section-date {
+        font-size: 11px;
+      }
+
+      .image-card {
+        min-width: 80%;
+        border-radius: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- STICKY HEADER -->
+  <div class="sticky-bar-wrap">
+    <div class="sticky-bar">
+      <div class="sticky-dot"></div>
+      <div class="sticky-title">Tor & Petter – Sri Lanka 2026</div>
+      <div class="sticky-dates">15. januar – 3. februar</div>
+    </div>
+  </div>
+
+  <div class="shell">
+    <!-- HERO -->
+    <header class="hero fade-in">
+      <div class="hero-card">
+        <div class="chip">Forslag til reiserute</div>
+        <h1><span class="emoji">🌴</span>Tor &amp; Petter – Sri Lanka 2026</h1>
+        <h2>Vår første lange tur sammen – sol, surf, safari og rolige kvelder</h2>
+        <div class="date-strip">15. januar – 3. februar</div>
+        <p class="hero-note">
+          Første ordentlig lange reisen vår sammen. Jeg ville lage en liten guide
+          – mest fordi jeg gleder meg helt sykt til å bare ha deg for meg selv noen
+          uker. Sol, surf, god mat, god drikke og tid der vi bare kan være oss to.
+          <span>Her er et forslag – resten justerer vi akkurat sånn som vi vil. 💚</span>
+        </p>
+      </div>
+    </header>
+
+    <!-- Colombo -->
+    <section class="section-card fade-in">
+      <div class="section-header-row">
+        <div class="icon">📍</div>
+        <div class="section-title">Colombo – soft landing & rooftop-pool</div>
+        <div class="section-date">15. januar</div>
+      </div>
+      <div class="pill">Første kveld – myk start</div>
+      <p>
+        Vi lander sent og starter rolig: kaffe, rooftop-pool og litt bystemning før vi
+        setter kurs mot strendene. En kveld til å lande sammen, ta et glass på taket og
+        kjenne at ferien virkelig har begynt.
+      </p>
+      <div class="subheading">Forslag til hoteller</div>
+      <ul>
+        <li>Cinnamon Red</li>
+        <li>Granbell Hotel</li>
+        <li>Marino Beach</li>
+      </ul>
+      <div class="subheading">Forslag til aktiviteter</div>
+      <ul>
+        <li>Rooftop-pool, solnedgang og avslapping</li>
+        <li>Ettermiddagstur til Galle Face Green</li>
+        <li>Rolig middag og et glass vin før vi kjører mot Mirissa</li>
+      </ul>
+      <div class="image-row">
+        <div class="image-card" data-img="colombo.png">
+          <img src="colombo.png" alt="Rooftop-pool i Colombo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Mirissa & Weligama -->
+    <section class="section-card fade-in">
+      <div class="section-header-row">
+        <div class="icon">🌊</div>
+        <div class="section-title">Mirissa &amp; Weligama – surf &amp; strand</div>
+        <div class="section-date">16.–24. januar</div>
+      </div>
+      <div class="pill">Hoveddelen av ferien</div>
+      <p>
+        Her starter feriefølelsen for alvor: surf, varme kvelder og lange dager på
+        stranden. Planen er egentlig bare å være Tor &amp; Petter ved havet – sove godt,
+        spise godt, ta en drink eller to og bade til vi er skrukkete.
+      </p>
+      <div class="subheading">Forslag til hoteller</div>
+      <ul>
+        <li>Lantern Boutique</li>
+        <li>Ubuntu Beach Villas</li>
+        <li>Weligama Bay Marriott</li>
+      </ul>
+      <div class="subheading">Forslag til aktiviteter</div>
+      <ul>
+        <li>Surf i Weligama – leie brett eller ta en time sammen</li>
+        <li>Snorkling i Mirissa</li>
+        <li>Whale watching</li>
+        <li>Dagstur til Galle Fort og kaffe / is i gamlebyen</li>
+      </ul>
+      <div class="image-row">
+        <div class="image-card" data-img="mirissa.png">
+          <img src="mirissa.png" alt="Strand i Mirissa" />
+        </div>
+        <div class="image-card" data-img="mirissa_palm.png">
+          <img src="mirissa_palm.png" alt="Palmer ved stranden" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Udawalawe -->
+    <section class="section-card fade-in">
+      <div class="section-header-row">
+        <div class="icon">🐘</div>
+        <div class="section-title">Udawalawe – safari light</div>
+        <div class="section-date">24.–26. januar</div>
+      </div>
+      <div class="pill">Elefanter &amp; natur</div>
+      <p>
+        Et lite avbrekk fra kysten – to netter med elefanter, morgensol og ro. Litt
+        eventyr, men fortsatt i vårt tempo, med god tid til å slappe av mellom
+        safariturene og sitte med noe godt i glasset når kvelden kommer.
+      </p>
+      <div class="subheading">Forslag til hoteller</div>
+      <ul>
+        <li>Kalu’s Hideaway</li>
+        <li>Centauria Wild</li>
+      </ul>
+      <div class="subheading">Forslag til aktiviteter</div>
+      <ul>
+        <li>Ettermiddagssafari</li>
+        <li>Morgensafari</li>
+        <li>Elephant Transit Home (valgfritt)</li>
+      </ul>
+      <div class="image-row">
+        <div class="image-card" data-img="safari.png">
+          <img src="safari.png" alt="Elefanter i Udawalawe" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Hiriketiya -->
+    <section class="section-card fade-in">
+      <div class="section-header-row">
+        <div class="icon">🌴</div>
+        <div class="section-title">Hiriketiya – jungelbukt &amp; boutique</div>
+        <div class="section-date">26. jan – 2. feb</div>
+      </div>
+      <div class="pill">Liten boble for oss</div>
+      <p>
+        Slutten av turen blir vår egen lille boble: surfebukt, palmer, små kafeer og
+        boutiquehoteller. Bare gå barbeint, bade, spise god sjømat, dele en flaske vin
+        her og der og ha rolige kvelder sammen når lyset forsvinner fra bukten.
+      </p>
+      <div class="subheading">Forslag til hoteller</div>
+      <ul>
+        <li>Salt House</li>
+        <li>Dots Bay House</li>
+        <li>The Cayenne</li>
+      </ul>
+      <div class="subheading">Forslag til aktiviteter</div>
+      <ul>
+        <li>Surf i bukten</li>
+        <li>Snorkling</li>
+        <li>Brunch &amp; kafeer langs stranden</li>
+        <li>Dagstur til Tangalle</li>
+      </ul>
+      <div class="image-row">
+        <div class="image-card" data-img="hiriketiya.png">
+          <img src="hiriketiya.png" alt="Solnedgang ved Hiriketiya" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Siste kveld -->
+    <section class="section-card fade-in">
+      <div class="section-header-row">
+        <div class="icon">🍸</div>
+        <div class="section-title">Siste kveld &amp; hjemreise</div>
+        <div class="section-date">2.–3. februar</div>
+      </div>
+      <div class="pill">Middag &amp; drinker</div>
+      <p>
+        En siste kveld i Colombo eller Negombo: god middag, kanskje en flaske bobler
+        og et par drinker før vi drar til flyplassen rundt midnatt. Resten av natten:
+        oss to sovende ved siden av hverandre på vei hjem – forhåpentligvis ganske
+        lykkelige, slitne og allerede litt klare for neste tur.
+      </p>
+    </section>
+
+    <footer>
+      Tor &amp; Petter • Sri Lanka 2026 • <span>Dette er bare begynnelsen</span>
+    </footer>
+  </div>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightboxClose">×</span>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script>
+    // Fullscreen popup for images
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll(".image-card").forEach(card => {
+      card.addEventListener("click", () => {
+        const src = card.getAttribute("data-img");
+        if (!src) return;
+        lightboxImg.src = src;
+        lightbox.classList.add("open");
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightboxImg.src = "";
+    }
+
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox || e.target === lightboxClose) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) {
+        closeLightbox();
+      }
+    });
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15
+      }
+    );
+
+    document.querySelectorAll(".fade-in").forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
