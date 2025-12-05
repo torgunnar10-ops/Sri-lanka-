@@ -19,16 +19,11 @@
       --shadow-card: 0 10px 26px rgba(15, 23, 42, 0.06);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing:border-box; margin:0; padding:0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, #e0f2fe 0, #f5fafc 35%, #fefaf5 100%);
+      background: radial-gradient(circle at top, #e0f2fe 0, #f5fafc 35%, #fefaf5 100%);
       color: var(--text);
       line-height: 1.7;
       padding: 10px;
@@ -123,9 +118,7 @@
       gap: 6px;
     }
 
-    h1 span.emoji {
-      font-size: 22px;
-    }
+    h1 span.emoji { font-size: 22px; }
 
     h2 {
       font-size: 13px;
@@ -171,10 +164,7 @@
       margin-bottom: 6px;
     }
 
-    .icon {
-      font-size: 18px;
-      flex-shrink: 0;
-    }
+    .icon { font-size: 18px; flex-shrink: 0; }
 
     .section-title {
       font-weight: 600;
@@ -238,10 +228,7 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    .image-row::-webkit-scrollbar {
-      height: 6px;
-    }
-
+    .image-row::-webkit-scrollbar { height: 6px; }
     .image-row::-webkit-scrollbar-thumb {
       background: #d1d5db;
       border-radius: 999px;
@@ -268,9 +255,7 @@
       transition: transform 0.22s ease-out;
     }
 
-    .image-card:hover img {
-      transform: scale(1.04);
-    }
+    .image-card:hover img { transform: scale(1.04); }
 
     footer {
       text-align: center;
@@ -280,9 +265,7 @@
       padding-bottom: 10px;
     }
 
-    footer span {
-      color: var(--accent);
-    }
+    footer span { color: var(--accent); }
 
     /* LIGHTBOX */
 
@@ -297,9 +280,7 @@
       padding: 10px;
     }
 
-    .lightbox.open {
-      display: flex;
-    }
+    .lightbox.open { display: flex; }
 
     .lightbox img {
       max-width: 100%;
@@ -318,73 +299,21 @@
       line-height: 1;
     }
 
-    /* SCROLL FADE */
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* MOBIL-JUSTERINGER */
+    /* MOBIL */
 
     @media (max-width: 480px) {
-      body {
-        padding: 10px 8px 16px 8px;
-      }
-
-      .sticky-bar {
-        padding-inline: 10px;
-        border-radius: 999px;
-      }
-
-      .sticky-title {
-        font-size: 12px;
-      }
-
-      .sticky-dates {
-        font-size: 10px;
-      }
-
-      .hero-card {
-        padding: 16px 14px 14px 14px;
-        border-radius: 20px;
-      }
-
-      h1 {
-        font-size: 21px;
-      }
-
-      h2 {
-        font-size: 12px;
-      }
-
-      .hero-note {
-        font-size: 11px;
-      }
-
-      .section-card {
-        border-radius: 18px;
-        padding: 12px 11px 10px 11px;
-      }
-
-      .section-header-row {
-        flex-wrap: wrap;
-      }
-
-      .section-date {
-        font-size: 11px;
-      }
-
-      .image-card {
-        min-width: 80%;
-        border-radius: 16px;
-      }
+      body { padding: 10px 8px 16px 8px; }
+      .sticky-bar { padding-inline: 10px; border-radius: 999px; }
+      .sticky-title { font-size: 12px; }
+      .sticky-dates { font-size: 10px; }
+      .hero-card { padding: 16px 14px 14px 14px; border-radius: 20px; }
+      h1 { font-size: 21px; }
+      h2 { font-size: 12px; }
+      .hero-note { font-size: 11px; }
+      .section-card { border-radius: 18px; padding: 12px 11px 10px 11px; }
+      .section-header-row { flex-wrap: wrap; }
+      .section-date { font-size: 11px; }
+      .image-card { min-width: 80%; border-radius: 16px; }
     }
   </style>
 </head>
@@ -393,14 +322,14 @@
   <div class="sticky-bar-wrap">
     <div class="sticky-bar">
       <div class="sticky-dot"></div>
-      <div class="sticky-title">Tor & Petter – Sri Lanka 2026</div>
+      <div class="sticky-title">Tor &amp; Petter – Sri Lanka 2026</div>
       <div class="sticky-dates">15. januar – 3. februar</div>
     </div>
   </div>
 
   <div class="shell">
     <!-- HERO -->
-    <header class="hero fade-in">
+    <header class="hero">
       <div class="hero-card">
         <div class="chip">Forslag til reiserute</div>
         <h1><span class="emoji">🌴</span>Tor &amp; Petter – Sri Lanka 2026</h1>
@@ -416,10 +345,10 @@
     </header>
 
     <!-- Colombo -->
-    <section class="section-card fade-in">
+    <section class="section-card">
       <div class="section-header-row">
         <div class="icon">📍</div>
-        <div class="section-title">Colombo – soft landing & rooftop-pool</div>
+        <div class="section-title">Colombo – soft landing &amp; rooftop-pool</div>
         <div class="section-date">15. januar</div>
       </div>
       <div class="pill">Første kveld – myk start</div>
@@ -448,7 +377,7 @@
     </section>
 
     <!-- Mirissa & Weligama -->
-    <section class="section-card fade-in">
+    <section class="section-card">
       <div class="section-header-row">
         <div class="icon">🌊</div>
         <div class="section-title">Mirissa &amp; Weligama – surf &amp; strand</div>
@@ -484,7 +413,7 @@
     </section>
 
     <!-- Udawalawe -->
-    <section class="section-card fade-in">
+    <section class="section-card">
       <div class="section-header-row">
         <div class="icon">🐘</div>
         <div class="section-title">Udawalawe – safari light</div>
@@ -515,7 +444,7 @@
     </section>
 
     <!-- Hiriketiya -->
-    <section class="section-card fade-in">
+    <section class="section-card">
       <div class="section-header-row">
         <div class="icon">🌴</div>
         <div class="section-title">Hiriketiya – jungelbukt &amp; boutique</div>
@@ -548,7 +477,7 @@
     </section>
 
     <!-- Siste kveld -->
-    <section class="section-card fade-in">
+    <section class="section-card">
       <div class="section-header-row">
         <div class="icon">🍸</div>
         <div class="section-title">Siste kveld &amp; hjemreise</div>
@@ -604,25 +533,6 @@
       if (e.key === "Escape" && lightbox.classList.contains("open")) {
         closeLightbox();
       }
-    });
-
-    // Scroll fade-in
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.15
-      }
-    );
-
-    document.querySelectorAll(".fade-in").forEach(el => {
-      observer.observe(el);
     });
   </script>
 </body>
