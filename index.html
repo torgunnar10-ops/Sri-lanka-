@@ -33,8 +33,20 @@
     /* HERO */
 
     header.hero {
+      padding: 8px 0 16px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 14px 14px 12px 14px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
       text-align: center;
-      padding: 14px 8px 18px 8px;
+      width: 100%;
+      max-width: 640px;
     }
 
     .chip {
@@ -51,7 +63,7 @@
     }
 
     h1 {
-      font-size: clamp(23px, 5vw, 28px);
+      font-size: clamp(22px, 5vw, 28px);
       margin-bottom: 4px;
       display: inline-flex;
       align-items: center;
@@ -78,8 +90,6 @@
     .hero-note {
       font-size: 12px;
       color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto;
     }
 
     .hero-note span {
@@ -92,7 +102,7 @@
     .section-card {
       background: var(--card);
       border-radius: 18px;
-      padding: 14px 12px 12px 12px;
+      padding: 12px 12px 10px 12px;
       margin-bottom: 12px;
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
       border: 1px solid var(--border);
@@ -213,11 +223,12 @@
       body {
         padding: 10px;
       }
-      header.hero {
-        padding: 12px 4px 14px 4px;
+      .hero-card {
+        padding: 12px 10px 10px 10px;
+        border-radius: 16px;
       }
       h1 {
-        font-size: 21px;
+        font-size: 20px;
       }
       h2 {
         font-size: 12px;
@@ -226,7 +237,7 @@
         font-size: 11px;
       }
       .section-card {
-        padding: 12px 10px 10px 10px;
+        padding: 10px 10px 8px 10px;
         border-radius: 16px;
       }
       .section-header-row {
@@ -247,13 +258,15 @@
 <body>
 <div class="shell">
   <header class="hero">
-    <div class="chip">FORSLAG TIL REISERUTE</div>
-    <h1><span class="emoji">🌴</span>Tor & Petter – Sri Lanka 2026</h1>
-    <h2>Turen vår i korte trekk – sol, surf, safari og tid bare for oss to</h2>
-    <div class="date-strip">15. januar – 3. februar</div>
-    <p class="hero-note">
-      Dette er et forslag til reiserute. <span>Kom gjerne med innspill hvis det er noe du har lyst å legge til ❤️</span>
-    </p>
+    <div class="hero-card">
+      <div class="chip">FORSLAG TIL REISERUTE</div>
+      <h1><span class="emoji">🌴</span>Tor & Petter – Sri Lanka 2026</h1>
+      <h2>Vår første lange tur sammen – sol, surf, safari og late dager</h2>
+      <div class="date-strip">15. januar – 3. februar</div>
+      <p class="hero-note">
+        En liten reiseguide jeg har laget til oss. <span>Si fra hvis du vil legge til noe – dette er vår tur ❤️</span>
+      </p>
+    </div>
   </header>
 
   <!-- Colombo -->
@@ -265,8 +278,8 @@
     </div>
     <div class="pill">Første dag – myk start</div>
     <p>
-      Vi lander sent og starter rolig: kaffe, rooftop-pool og litt bystemning før vi setter kurs mot strendene.
-      En dag til å lande sammen og kjenne at ferien har startet.
+      Vi lander midt på natten og starter rolig: kaffe, rooftop-pool og litt bystemning før vi drar videre sørover.
+      En dag til å lande, sove litt ut og bare kjenne at vi endelig er på ferie sammen.
     </p>
     <div class="subheading">Forslag til hoteller</div>
     <ul>
@@ -278,7 +291,7 @@
     <ul>
       <li>Rooftop-pool og avslapping</li>
       <li>Ettermiddagstur til Galle Face Green</li>
-      <li>Rolig middag før vi kjører sørover</li>
+      <li>Rolig middag før vi kjører mot Mirissa</li>
     </ul>
     <div class="image-row">
       <div class="image-card">
@@ -298,8 +311,8 @@
     </div>
     <div class="pill">Hoveddelen av ferien</div>
     <p>
-      Her begynner selve ferien: surf, varme kvelder, snorkling og lange dager på stranden.
-      Åtte dager der planen egentlig bare er å være Tor & Petter ved havet.
+      Her starter selve ferien: surf, varme kvelder, snorkling og lange dager på stranden.
+      Planen er egentlig bare å være Tor & Petter ved havet – sove godt, spise godt og bade mye.
     </p>
     <div class="subheading">Forslag til hoteller</div>
     <ul>
@@ -337,8 +350,8 @@
     </div>
     <div class="pill">Elefanter & natur</div>
     <p>
-      Et lite avbrekk fra kysten – to netter med elefanter, morgensol og ro.
-      Litt eventyr, men fortsatt i vårt tempo.
+      Et lite avbrekk fra kysten – to netter med elefanter, morgensol og ro. Litt eventyr, men fortsatt i vårt tempo,
+      med god tid til å slappe av mellom safariturene.
     </p>
     <div class="subheading">Forslag til hoteller</div>
     <ul>
@@ -369,8 +382,8 @@
     </div>
     <div class="pill">Mest romantiske del</div>
     <p>
-      Vår lille boble: surfebukt, palmer, små kafeer og boutiquehoteller.
-      Her skal vi bare leve sakte, bade, spise godt og lade opp sammen.
+      Vår lille boble på slutten av turen: surfebukt, palmer, små kafeer og boutiquehoteller.
+      Her vil jeg at vi bare skal gå barbeint, bade, spise god mat og ha rolige kvelder sammen.
     </p>
     <div class="subheading">Forslag til hoteller</div>
     <ul>
@@ -403,8 +416,8 @@
     </div>
     <div class="pill">Middag & drinker</div>
     <p>
-      En siste middag og noen drinker i Colombo/Negombo før vi drar til flyplassen rundt midnatt.
-      Resten av natten: oss to sovende ved siden av hverandre på vei hjem.
+      En siste middag og noen drinker i Colombo eller Negombo før vi drar til flyplassen rundt midnatt.
+      Resten av natten: oss to sovende ved siden av hverandre på vei hjem – forhåpentligvis ganske lykkelige og slitne.
     </p>
   </section>
 
