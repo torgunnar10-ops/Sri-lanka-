@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
-      --bg: #f5fafc;
+      --bg: #f3f7fb;
       --card: #ffffff;
       --accent: #0f766e;
-      --accent-soft: #dcfce7;
+      --accent-soft: #d1fae5;
       --accent-soft-2: #e0f2fe;
       --text: #111827;
       --muted: #6b7280;
@@ -22,7 +22,7 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #e0f2fe 0, #f5fafc 35%, #fefaf5 100%);
+      background: radial-gradient(circle at top, #e0f2fe 0, #f3f7fb 40%, #fefaf5 100%);
       color: var(--text);
       line-height: 1.7;
       padding: 10px;
@@ -47,7 +47,7 @@
       margin: 0 auto 10px auto;
       padding: 6px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       border: 1px solid rgba(226, 232, 240, 0.9);
       display: flex;
       align-items: center;
@@ -94,6 +94,15 @@
       text-align: center;
     }
 
+    .hero-kicker {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
     h1 {
       font-size: clamp(22px, 5vw, 28px);
       margin-bottom: 6px;
@@ -122,6 +131,11 @@
       color: var(--muted);
       max-width: 560px;
       margin: 0 auto;
+    }
+
+    .hero-note span {
+      color: var(--accent);
+      font-weight: 500;
     }
 
     /* SEKSJONER */
@@ -196,19 +210,21 @@
       margin-bottom: 2px;
     }
 
-    /* ENKLE BILDER */
+    /* ENKLE BILDER – flere per rad */
 
     .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-top: 10px;
     }
 
     .image-row img {
-      display: block;
-      width: 100%;
-      max-height: 260px;
+      flex: 0 0 30%;
+      max-width: 30%;
+      border-radius: 14px;
+      height: 140px;
       object-fit: cover;
-      border-radius: 16px;
-      margin-bottom: 8px;
       box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
     }
 
@@ -224,17 +240,25 @@
 
     @media (max-width: 600px) {
       body { padding: 10px 8px 16px 8px; }
+
       .sticky-bar { padding-inline: 10px; }
       .sticky-title { font-size: 12px; }
       .sticky-dates { font-size: 10px; }
+
       .hero-card { padding: 16px 14px 14px 14px; border-radius: 20px; }
       h1 { font-size: 21px; }
       h2 { font-size: 12px; }
       .hero-note { font-size: 11px; }
+
       .section-card { border-radius: 18px; padding: 12px 11px 10px 11px; }
       .section-header-row { flex-wrap: wrap; }
       .section-date { font-size: 11px; }
-      .image-row img { max-height: 220px; border-radius: 14px; }
+
+      .image-row img {
+        flex: 0 0 48%;
+        max-width: 48%;
+        height: 132px;
+      }
     }
   </style>
 </head>
@@ -242,22 +266,23 @@
   <div class="sticky-bar-wrap">
     <div class="sticky-bar">
       <div class="sticky-dot"></div>
-      <div class="sticky-title">Tor &amp; Petter – Sri Lanka 2026</div>
-      <div class="sticky-dates">15. januar – 3. februar</div>
+      <div class="sticky-title">Forslag til reiserute · Tor &amp; Petter</div>
+      <div class="sticky-dates">Sri Lanka · 15. jan – 3. feb</div>
     </div>
   </div>
 
   <div class="shell">
     <header class="hero">
       <div class="hero-card">
+        <div class="hero-kicker">Forslag til reiserute</div>
         <h1><span class="emoji">🌴</span>Tor &amp; Petter – Sri Lanka 2026</h1>
         <h2>Vår første lange tur sammen – sol, surf, safari og rolige kvelder</h2>
         <div class="date-strip">15. januar – 3. februar</div>
         <p class="hero-note">
           Første ordentlig lange reisen vår sammen. Jeg ville lage en liten guide – mest fordi jeg
           gleder meg helt sykt til å bare ha deg for meg selv noen uker. Sol, surf, god mat,
-          god drikke og tid der vi bare kan være oss to. Her er et forslag – resten justerer vi
-          akkurat sånn som vi vil. 💚
+          god drikke og tid der vi bare kan være oss to. <span>Her er et forslag – resten justerer vi
+          akkurat sånn som vi vil. 💚</span>
         </p>
       </div>
     </header>
@@ -289,6 +314,7 @@
       </ul>
       <div class="image-row">
         <img src="colombo.png" alt="Rooftop-pool i Colombo" />
+        <!-- Hvis du får flere Colombo-bilder senere, legg dem bare inn her -->
       </div>
     </section>
 
