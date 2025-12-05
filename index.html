@@ -6,20 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      --bg: #f3f4f6;
+      --bg: #fdf8f3;        /* lys sand */
       --card: #ffffff;
-      --accent: #0f766e;
+      --accent: #0f766e;    /* teal */
       --accent-soft: #dcfce7;
       --text: #111827;
       --muted: #6b7280;
       --border: #e5e7eb;
+      --shadow-soft: 0 10px 26px rgba(15, 23, 42, 0.06);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #e5e7eb 0, #f3f4f6 45%, #e5e7eb 100%);
+      background: radial-gradient(circle at top, #f1f5f9 0, #fdf8f3 40%, #fefce8 100%);
       color: var(--text);
       line-height: 1.7;
       padding: 12px;
@@ -33,7 +34,7 @@
     /* HERO */
 
     header.hero {
-      padding: 8px 0 16px 0;
+      padding: 6px 0 16px 0;
       display: flex;
       justify-content: center;
     }
@@ -42,7 +43,7 @@
       background: var(--card);
       border-radius: 18px;
       padding: 14px 14px 12px 14px;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-soft);
       border: 1px solid var(--border);
       text-align: center;
       width: 100%;
@@ -194,11 +195,7 @@
       border-radius: 12px;
       overflow: hidden;
       background: #e5e7eb;
-    }
-
-    .image-link {
-      display: block;
-      text-decoration: none;
+      cursor: pointer;
     }
 
     .image-card img {
@@ -206,6 +203,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.18s ease-out;
+    }
+
+    .image-card:hover img {
+      transform: scale(1.03);
     }
 
     footer {
@@ -216,6 +218,37 @@
     }
 
     footer span { color: var(--accent); }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      font-size: 26px;
+      color: #e5e7eb;
+    }
 
     /* MOBIL-JUSTERINGER */
 
@@ -250,7 +283,7 @@
         font-size: 11px;
       }
       .image-card {
-        min-width: 70%;
+        min-width: 72%;
       }
     }
   </style>
@@ -264,7 +297,9 @@
       <h2>Vår første lange tur sammen – sol, surf, safari og late dager</h2>
       <div class="date-strip">15. januar – 3. februar</div>
       <p class="hero-note">
-        En liten reiseguide jeg har laget til oss. <span>Si fra hvis du vil legge til noe – dette er vår tur ❤️</span>
+        Dette er den første lange reisen vår sammen, og jeg ville lage en liten guide – mest fordi jeg gleder meg helt
+        sykt til å dele disse dagene med deg. Sol, surf, god mat, ro og tid bare for oss to.
+        <span>Her er et forslag – resten justerer vi akkurat som vi vil. 💚</span>
       </p>
     </div>
   </header>
@@ -278,8 +313,8 @@
     </div>
     <div class="pill">Første dag – myk start</div>
     <p>
-      Vi lander midt på natten og starter rolig: kaffe, rooftop-pool og litt bystemning før vi drar videre sørover.
-      En dag til å lande, sove litt ut og bare kjenne at vi endelig er på ferie sammen.
+      Vi lander sent og starter rolig: kaffe, rooftop-pool og litt bystemning før vi setter kurs mot strendene.
+      En dag til å lande sammen og kjenne at ferien har startet.
     </p>
     <div class="subheading">Forslag til hoteller</div>
     <ul>
@@ -294,10 +329,8 @@
       <li>Rolig middag før vi kjører mot Mirissa</li>
     </ul>
     <div class="image-row">
-      <div class="image-card">
-        <a class="image-link" href="colombo.png" target="_blank">
-          <img src="colombo.png" alt="Colombo rooftop-pool">
-        </a>
+      <div class="image-card" data-img="colombo.png">
+        <img src="colombo.png" alt="Colombo rooftop-pool">
       </div>
     </div>
   </section>
@@ -311,7 +344,7 @@
     </div>
     <div class="pill">Hoveddelen av ferien</div>
     <p>
-      Her starter selve ferien: surf, varme kvelder, snorkling og lange dager på stranden.
+      Her starter feriefølelsen for alvor: surf, varme kvelder, snorkling og lange dager på stranden.
       Planen er egentlig bare å være Tor & Petter ved havet – sove godt, spise godt og bade mye.
     </p>
     <div class="subheading">Forslag til hoteller</div>
@@ -328,15 +361,11 @@
       <li>Dagstur til Galle Fort</li>
     </ul>
     <div class="image-row">
-      <div class="image-card">
-        <a class="image-link" href="mirissa.png" target="_blank">
-          <img src="mirissa.png" alt="Mirissa strand">
-        </a>
+      <div class="image-card" data-img="mirissa.png">
+        <img src="mirissa.png" alt="Mirissa strand">
       </div>
-      <div class="image-card">
-        <a class="image-link" href="mirissa_palm.png" target="_blank">
-          <img src="mirissa_palm.png" alt="Palmer ved Mirissa">
-        </a>
+      <div class="image-card" data-img="mirissa_palm.png">
+        <img src="mirissa_palm.png" alt="Palmer ved Mirissa">
       </div>
     </div>
   </section>
@@ -365,10 +394,8 @@
       <li>Elephant Transit Home (valgfritt)</li>
     </ul>
     <div class="image-row">
-      <div class="image-card">
-        <a class="image-link" href="safari.png" target="_blank">
-          <img src="safari.png" alt="Elefanter i Udawalawe">
-        </a>
+      <div class="image-card" data-img="safari.png">
+        <img src="safari.png" alt="Elefanter i Udawalawe">
       </div>
     </div>
   </section>
@@ -399,10 +426,8 @@
       <li>Dagstur til Tangalle</li>
     </ul>
     <div class="image-row">
-      <div class="image-card">
-        <a class="image-link" href="hiriketiya.png" target="_blank">
-          <img src="hiriketiya.png" alt="Solnedgang ved Hiriketiya">
-        </a>
+      <div class="image-card" data-img="hiriketiya.png">
+        <img src="hiriketiya.png" alt="Solnedgang ved Hiriketiya">
       </div>
     </div>
   </section>
@@ -425,5 +450,44 @@
     Tor & Petter • Sri Lanka 2026 • <span>Dette er bare begynnelsen</span>
   </footer>
 </div>
+
+<!-- Lightbox overlay -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">×</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  // Simple fullscreen popup for images
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+
+  document.querySelectorAll('.image-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.getAttribute('data-img');
+      if (!src) return;
+      lightboxImg.src = src;
+      lightbox.classList.add('open');
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightboxImg.src = '';
+  }
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target === lightboxClose) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLightbox();
+    }
+  });
+</script>
 </body>
 </html>
