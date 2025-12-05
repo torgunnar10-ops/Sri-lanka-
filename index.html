@@ -13,13 +13,7 @@
       --text: #333333;
       --muted: #777777;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: var(--bg);
@@ -27,17 +21,8 @@
       line-height: 1.7;
       padding: 16px;
     }
-
-    .shell {
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-    }
-
-    header.hero {
-      text-align: center;
-      padding: 24px 16px 32px 16px;
-    }
-
+    .shell { max-width: 900px; margin: 0 auto 40px auto; }
+    header.hero { text-align: center; padding: 24px 16px 26px 16px; }
     .tag {
       display: inline-block;
       padding: 4px 10px;
@@ -45,76 +30,24 @@
       background: var(--accent-soft);
       color: var(--accent);
       font-size: 12px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: clamp(26px, 5vw, 34px);
-      margin-bottom: 6px;
-    }
-
-    h2 {
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .date-strip {
-      font-size: 13px;
-      color: var(--muted);
       margin-bottom: 8px;
     }
-
-    .hero-note {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 10px;
-      margin: 10px 0 24px 0;
-      list-style: none;
-      padding: 0;
-    }
-
-    .timeline li {
-      font-size: 13px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.7);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
-
-    .timeline span {
-      display: block;
-      font-size: 11px;
-      color: var(--muted);
-    }
-
+    h1 { font-size: clamp(26px, 5vw, 32px); margin-bottom: 4px; }
+    h2 { font-size: 15px; font-weight: 500; color: var(--muted); margin-bottom: 10px; }
+    .date-strip { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+    .hero-note { font-size: 13px; color: var(--muted); }
+    .hero-note span { color: var(--accent); }
     .section-card {
       background: var(--card);
       border-radius: 18px;
-      padding: 18px 18px 20px 18px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      padding: 16px 16px 18px 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
     }
-
-    .section-card h3 {
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .section-card .where {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
+    .section-card h3 { font-size: 18px; margin-bottom: 2px; }
+    .where { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
     .pill {
       display: inline-flex;
       align-items: center;
@@ -124,222 +57,154 @@
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .section-card p {
-      font-size: 14px;
       margin-bottom: 8px;
     }
-
-    .subheading {
-      font-size: 13px;
-      font-weight: 600;
-      margin-top: 8px;
-      margin-bottom: 4px;
-    }
-
-    ul {
-      padding-left: 18px;
-      margin-bottom: 6px;
-    }
-
-    ul li {
-      font-size: 13px;
-      margin-bottom: 3px;
-    }
-
-    .img-wrap {
-      margin-top: 10px;
-      border-radius: 14px;
-      overflow: hidden;
-    }
-
-    .img-wrap img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
+    .section-card p { font-size: 14px; margin-bottom: 6px; }
+    .subheading { font-size: 13px; font-weight: 600; margin-top: 4px; margin-bottom: 2px; }
+    ul { padding-left: 18px; margin-bottom: 4px; }
+    ul li { font-size: 13px; margin-bottom: 3px; }
+    .img-wrap { margin-top: 10px; border-radius: 14px; overflow: hidden; }
+    .img-wrap img { display: block; width: 100%; height: auto; }
     footer {
       text-align: center;
       margin-top: 18px;
       font-size: 12px;
       color: var(--muted);
     }
-
-    footer span {
-      color: var(--accent);
-    }
-
+    footer span { color: var(--accent); }
     @media (min-width: 720px) {
       .section-card {
         display: grid;
         grid-template-columns: 55% 45%;
-        gap: 16px;
+        gap: 14px;
         align-items: center;
       }
-
-      .section-card .text {
-        order: 1;
-      }
-
-      .section-card .img-wrap {
-        order: 2;
-        margin-top: 0;
-      }
+      .section-card .text { order: 1; }
+      .section-card .img-wrap { order: 2; margin-top: 0; }
     }
   </style>
 </head>
 <body>
 <div class="shell">
   <header class="hero">
-    <div class="tag">Tor & Petter • Sri Lanka 2026</div>
-    <h1>Vår første ferie sammen</h1>
-    <h2>En liten moderne reiseguide – og starten på noe veldig bra ❤️</h2>
-    <div class="date-strip">15. januar – 3. februar 2026</div>
+    <div class="tag">Forslag til reiserute</div>
+    <h1>Tor & Petter – Sri Lanka 2026</h1>
+    <h2>Turen i korte trekk – med sol, surf, safari og litt romantikk</h2>
+    <div class="date-strip">15. januar – 3. februar</div>
     <p class="hero-note">
-      Dette er turen i korte trekk – hvor vi skal, hva vi gjør, og hvilke steder vi kan bo.
+      Dette er et forslag til reiserute. <span>Kom gjerne med innspill hvis det er noe du har lyst å legge til ❤️</span>
     </p>
-
-    <ul class="timeline">
-      <li>Colombo<span>15. jan – myk landing & rooftop-pool</span></li>
-      <li>Mirissa & Weligama<span>16.–24. jan – surf, strand og whale watching</span></li>
-      <li>Udawalawe<span>24.–26. jan – safari light med elefanter</span></li>
-      <li>Hiriketiya<span>26. jan–2. feb – jungelbukt & boutique-vibe</span></li>
-      <li>Siste kveld<span>2. feb – middag, drinker og nattfly hjem</span></li>
-    </ul>
   </header>
 
   <section class="section-card">
     <div class="text">
-      <h3>Colombo – soft landing</h3>
-      <div class="where">15. januar • 1 natt</div>
-      <div class="pill">🏙 Rooftop-pool & første solnedgang</div>
+      <h3>Colombo – soft landing & rooftop pool</h3>
+      <div class="where">15. januar</div>
+      <div class="pill">🏙 Første dag – myk start</div>
       <p>
-        Vi lander midt på natten og starter helt rolig i Colombo. Planen er enkel: sove ut, ta en rolig morgen, 
-        bade i rooftop-bassenget og la det synke inn at vi endelig er på vår første ferie sammen.
+        Vi lander sent og bruker dagen på å lande: sove litt ut, finne kaffe og tilbringe noen timer ved et
+        rooftop-basseng med utsikt over Colombo. En rolig start før strandlivet begynner.
       </p>
-      <p>
-        På kvelden kjører vi sørover mot Mirissa – bare oss to, litt musikk i bilen og følelsen av at noe fint er på vei.
-      </p>
-
-      <div class="subheading">Mulige hoteller</div>
+      <div class="subheading">Forslag til hoteller</div>
       <ul>
-        <li><strong>Cinnamon Red Colombo</strong> – moderne, rimelig og ikonisk rooftop-pool.</li>
-        <li><strong>Granbell Hotel Colombo</strong> – nytt, stilrent og med havutsikt.</li>
-        <li><strong>Marino Beach Colombo</strong> – stort takbasseng og utsikt over havet.</li>
+        <li><strong>Cinnamon Red</strong> – moderne og ikonisk rooftop pool.</li>
+        <li><strong>Granbell Hotel</strong> – nytt, stilrent og nær havet.</li>
+        <li><strong>Marino Beach</strong> – stort infinity-basseng på taket.</li>
       </ul>
-
-      <div class="subheading">Små planer</div>
+      <div class="subheading">Forslag til aktiviteter</div>
       <ul>
-        <li>Sen frokost og et par timer ved rooftop-bassenget.</li>
-        <li>Kort tur til Galle Face Green for litt bystemning og havbris.</li>
-        <li>Avreise mot Mirissa tidlig kveld.</li>
+        <li>Rooftop pool & sol.</li>
+        <li>Ettermiddagstur til Galle Face Green.</li>
+        <li>Rolig middag før vi kjører sørover mot Mirissa.</li>
       </ul>
     </div>
     <div class="img-wrap">
-      <img src="colombo.png" alt="Colombo rooftop-basseng og skyline">
+      <img src="colombo.png" alt="Rooftop-basseng i Colombo">
     </div>
   </section>
 
   <section class="section-card">
     <div class="text">
       <h3>Mirissa & Weligama – surf & strand</h3>
-      <div class="where">16.–24. januar • 8 netter</div>
-      <div class="pill">🌊 Sol, bølger, dykking & strandliv</div>
+      <div class="where">16.–24. januar</div>
+      <div class="pill">🌊 Hoveddelen av ferien</div>
       <p>
-        Her starter ferien for alvor. Vi bor ved kysten mellom Mirissa og Weligama – med bølger, palmer og små 
-        strandbarer innen rekkevidde. Dagene skal være en miks av aktivitet og total avslapping.
+        Her starter ferien på ordentlig: surfestrender, turkise bukter, skilpadder og små strandrestauranter.
+        Vi bor ved stranden og har åtte dager med en miks av aktivitet og total avslapping.
       </p>
-      <p>
-        Surf for deg, snorkling for Petter, gode måltider, litt utforsking – og nok tid til å gjøre absolutt ingenting.
-      </p>
-
-      <div class="subheading">Mulige hoteller</div>
+      <div class="subheading">Forslag til hoteller</div>
       <ul>
-        <li><strong>Lantern Boutique Hotel (Mirissa)</strong> – rolig, voksent og rett ved stranden.</li>
-        <li><strong>Weligama Bay Marriott Resort & Spa</strong> – større resort med basseng og utsikt.</li>
-        <li><strong>Ubuntu Beach Villas</strong> – mer privat, med direkte tilgang til havet.</li>
+        <li><strong>Lantern Boutique</strong> – rolig og romantisk ved stranden.</li>
+        <li><strong>Ubuntu Beach Villas</strong> – privat strandlinje.</li>
+        <li><strong>Weligama Bay Marriott</strong> – resort med basseng og utsikt.</li>
       </ul>
-
-      <div class="subheading">Aktiviteter i korte trekk</div>
+      <div class="subheading">Forslag til aktiviteter</div>
       <ul>
-        <li>Casual surf i Weligama – leie brett eller ta en enkel time.</li>
-        <li>Snorkling ved Secret Beach eller Turtle Beach.</li>
-        <li>Whale watching en tidlig morgen (beste sesong).</li>
-        <li>Dykking for deg, mens Petter snorkler eller chiller på båten/stranden.</li>
-        <li>Dagstur til Galle Fort – små gater, kafeer og solnedgang på murene.</li>
+        <li>Surf i Weligama – leie brett eller ta en time.</li>
+        <li>Snorkling ved Secret Beach / Turtle Beach.</li>
+        <li>Whale watching en tidlig morgen.</li>
+        <li>Dykking for deg, snorkling/strand for Petter.</li>
+        <li>Dagstur til Galle Fort og solnedgang på murene.</li>
       </ul>
     </div>
     <div class="img-wrap">
-      <img src="mirissa.png" alt="Mirissa og Weligama – strender og palmer">
+      <img src="mirissa.png" alt="Strand og hav ved Mirissa">
     </div>
   </section>
 
   <section class="section-card">
     <div class="text">
       <h3>Udawalawe – safari light</h3>
-      <div class="where">24.–26. januar • 2 netter</div>
-      <div class="pill">🐘 Elefanter & stille natur</div>
+      <div class="where">24.–26. januar</div>
+      <div class="pill">🐘 Elefanter & natur</div>
       <p>
-        Etter kystdagene drar vi innover i landet til Udawalawe for en roligere safariopplevelse. Mindre kaos enn Yala, 
-        men fortsatt masse dyr – spesielt elefanter.
+        Vi tar en liten pause fra kysten og drar inn til Udawalawe for en roligere safariopplevelse.
+        To netter er nok til å få både ettermiddags- og morgensafari, pluss litt tid ved bassenget.
       </p>
-      <p>
-        To netter holder: én ettermiddagssafari, én morgensafari, og resten av tiden går til basseng, stillhet og utsikt.
-      </p>
-
-      <div class="subheading">Mulige hoteller</div>
+      <div class="subheading">Forslag til hoteller</div>
       <ul>
-        <li><strong>Kalu's Hideaway</strong> – grønt, frodig og personlig.</li>
-        <li><strong>Centauria Wild</strong> – større anlegg med basseng og utsikt over området.</li>
+        <li><strong>Kalu’s Hideaway</strong> – grønt, intimt og rolig.</li>
+        <li><strong>Centauria Wild</strong> – utsikt og basseng.</li>
       </ul>
-
-      <div class="subheading">Aktiviteter</div>
+      <div class="subheading">Forslag til aktiviteter</div>
       <ul>
-        <li>Ettermiddagssafari første dag – mykt lys og kveldsstemning.</li>
-        <li>Morgensafari dag to – dyrene er mest aktive tidlig.</li>
-        <li>Tid ved bassenget og kanskje et lite besøk til Elephant Transit Home.</li>
+        <li>Ettermiddagssafari første dag.</li>
+        <li>Morgensafari dag to.</li>
+        <li>Elephant Transit Home (valgfritt).</li>
+        <li>Pool & avslapping mellom slagene.</li>
       </ul>
     </div>
     <div class="img-wrap">
-      <img src="safari.png" alt="Elefanter og safari i Udawalawe">
+      <img src="safari.png" alt="Elefanter i Udawalawe">
     </div>
   </section>
 
   <section class="section-card">
     <div class="text">
-      <h3>Hiriketiya – jungelbukt & boutique-vibe</h3>
-      <div class="where">26. januar–2. februar • 7 netter</div>
-      <div class="pill">🌴 Surf, jungel & kafeer</div>
+      <h3>Hiriketiya – jungelbukt & boutique</h3>
+      <div class="where">26. januar – 2. februar</div>
+      <div class="pill">🌴 Mest romantiske del</div>
       <p>
-        Hiriketiya er den lille jungelomkransede bukten hvor tempoet senkes igjen. Her er det surf i bukten, 
-        snorkling langs klippene og små kafeer gjemt mellom palmene.
+        Hiriketiya er en liten jungelomkranset bukt med surfere, kafeer og strandhoteller.
+        Her kan vi virkelig koble av, finne vår egen rytme og bare nyte dagene sammen.
       </p>
-      <p>
-        Dette blir den mest romantiske delen av turen – lange morgener, varme kvelder og en følelse av å bo 
-        i en liten, grønn boble ved havet.
-      </p>
-
-      <div class="subheading">Mulige hoteller</div>
+      <div class="subheading">Forslag til hoteller</div>
       <ul>
-        <li><strong>Salt House</strong> – moderne, laidback og sosialt.</li>
-        <li><strong>Dots Bay House</strong> – ikonisk surf- og hangout-sted.</li>
-        <li><strong>The Cayenne</strong> – mer intimt og romantisk boutique-preg.</li>
+        <li><strong>Salt House</strong> – boho, moderne og sosialt.</li>
+        <li><strong>Dots Bay House</strong> – kjent surf- og hangout-sted.</li>
+        <li><strong>The Cayenne</strong> – roligere og mer romantisk.</li>
       </ul>
-
-      <div class="subheading">Aktiviteter</div>
+      <div class="subheading">Forslag til aktiviteter</div>
       <ul>
-        <li>Surf i bukten når forholdene er fine.</li>
-        <li>Snorkling nær klippene og inne i den rolige delen av bukten.</li>
-        <li>Kaffe- og brunchrunder på de forskjellige stedene langs stranden.</li>
+        <li>Surf i bukten når forholdene er gode.</li>
+        <li>Snorkling langs klippene.</li>
+        <li>Kafeer, brunch og smoothies.</li>
         <li>Dagstur til Tangalle for enda roligere strender.</li>
-        <li>En yogatime eller massasje hvis vi vil skikkelig ned i gir.</li>
+        <li>Massasje eller yoga en av dagene.</li>
       </ul>
     </div>
     <div class="img-wrap">
-      <img src="hiriketiya.png" alt="Hiriketiya – liten bukt omgitt av jungel">
+      <img src="hiriketiya.png" alt="Solnedgang og hav ved Hiriketiya">
     </div>
   </section>
 
@@ -349,11 +214,9 @@
       <div class="where">2.–3. februar</div>
       <div class="pill">🍸 Middag, drinker & nattfly</div>
       <p>
-        2. februar runder vi av reisen med en siste middag og noen drinker langs kysten eller i Colombo/Negombo. 
-        Vi drar til flyplassen rundt midnatt og sover på flyet hjem.
-      </p>
-      <p>
-        Vi kommer tilbake solbrune, slitne på en god måte – og med en hel ferie verdt av små, fine øyeblikk som bare er våre.
+        2. februar runder vi av reisen med en siste middag og noen drinker i Colombo eller Negombo,
+        før vi drar til flyplassen rundt midnatt. Vi sover på flyet hjem – solbrune, slitne på en god måte
+        og fulle av minner.
       </p>
     </div>
   </section>
