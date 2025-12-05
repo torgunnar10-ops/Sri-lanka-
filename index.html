@@ -7,7 +7,6 @@
   <style>
     :root {
       --bg: #f5fafc;          /* lys blå-sand vibe */
-      --bg-secondary: #fefaf5;
       --card: #ffffff;
       --accent: #0f766e;
       --accent-soft: #dcfce7;
@@ -15,8 +14,8 @@
       --text: #111827;
       --muted: #6b7280;
       --border: #e5e7eb;
-      --shadow-soft: 0 14px 36px rgba(15, 23, 42, 0.10);
-      --shadow-card: 0 10px 26px rgba(15, 23, 42, 0.06);
+      --shadow-soft: 0 14px 32px rgba(15, 23, 42, 0.08);
+      --shadow-card: 0 10px 24px rgba(15, 23, 42, 0.06);
     }
 
     * { box-sizing:border-box; margin:0; padding:0; }
@@ -34,26 +33,26 @@
       margin: 0 auto 32px auto;
     }
 
-    /* STICKY HEADER */
+    /* STICKY HEADER – enkel og stilren */
 
     .sticky-bar-wrap {
       position: sticky;
       top: 0;
       z-index: 80;
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
     }
 
     .sticky-bar {
       max-width: 720px;
       margin: 0 auto 10px auto;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid rgba(226, 232, 240, 0.9);
       display: flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
     }
 
     .sticky-dot {
@@ -61,6 +60,7 @@
       height: 8px;
       border-radius: 999px;
       background: #22c55e;
+      flex-shrink: 0;
     }
 
     .sticky-title {
@@ -76,7 +76,7 @@
       white-space: nowrap;
     }
 
-    /* HERO */
+    /* HERO – ryddig og sentrert */
 
     header.hero {
       padding: 4px 0 18px 0;
@@ -86,10 +86,9 @@
 
     .hero-card {
       width: 100%;
-      max-width: 720px;
       background: radial-gradient(circle at top left, var(--accent-soft-2), var(--card));
       border-radius: 24px;
-      padding: 18px 18px 16px 18px;
+      padding: 20px 18px 18px 18px;
       box-shadow: var(--shadow-soft);
       border: 1px solid rgba(209, 213, 219, 0.8);
       text-align: center;
@@ -99,15 +98,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 4px 12px;
+      padding: 4px 14px;
       border-radius: 999px;
       border: 1px solid rgba(209, 213, 219, 0.9);
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.9);
       color: var(--muted);
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     h1 {
@@ -145,13 +144,13 @@
       font-weight: 500;
     }
 
-    /* SECTIONS / CARDS */
+    /* SEKSJONER */
 
     .section-card {
       background: var(--card);
       border-radius: 20px;
       padding: 14px 14px 12px 14px;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
       box-shadow: var(--shadow-card);
       border: 1px solid var(--border);
     }
@@ -217,7 +216,7 @@
       margin-bottom: 2px;
     }
 
-    /* BILDER – 3:2, RUNDE KANTER */
+    /* BILDER – mindre og ryddigere */
 
     .image-row {
       display: flex;
@@ -226,6 +225,7 @@
       overflow-x: auto;
       padding-bottom: 6px;
       -webkit-overflow-scrolling: touch;
+      justify-content: flex-start;
     }
 
     .image-row::-webkit-scrollbar { height: 6px; }
@@ -235,16 +235,14 @@
     }
 
     .image-card {
-      flex: 1;
-      min-width: 64%;
-      max-width: 100%;
-      border-radius: 18px;
+      flex: 0 0 230px;        /* fast bredde på desktop */
+      max-width: 260px;
+      border-radius: 16px;
       overflow: hidden;
       background: #e5e7eb;
       cursor: pointer;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
-      position: relative;
-      aspect-ratio: 3 / 2;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+      aspect-ratio: 4 / 3;
     }
 
     .image-card img {
@@ -252,10 +250,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.22s ease-out;
+      transition: transform 0.2s ease-out;
     }
 
-    .image-card:hover img { transform: scale(1.04); }
+    .image-card:hover img { transform: scale(1.03); }
 
     footer {
       text-align: center;
@@ -301,19 +299,39 @@
 
     /* MOBIL */
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       body { padding: 10px 8px 16px 8px; }
-      .sticky-bar { padding-inline: 10px; border-radius: 999px; }
+
+      .sticky-bar {
+        padding-inline: 10px;
+        border-radius: 999px;
+      }
+
       .sticky-title { font-size: 12px; }
       .sticky-dates { font-size: 10px; }
-      .hero-card { padding: 16px 14px 14px 14px; border-radius: 20px; }
+
+      .hero-card {
+        padding: 16px 14px 14px 14px;
+        border-radius: 20px;
+      }
+
       h1 { font-size: 21px; }
       h2 { font-size: 12px; }
       .hero-note { font-size: 11px; }
-      .section-card { border-radius: 18px; padding: 12px 11px 10px 11px; }
+
+      .section-card {
+        border-radius: 18px;
+        padding: 12px 11px 10px 11px;
+      }
+
       .section-header-row { flex-wrap: wrap; }
       .section-date { font-size: 11px; }
-      .image-card { min-width: 80%; border-radius: 16px; }
+
+      .image-card {
+        flex: 0 0 75%;       /* litt smalere på mobil */
+        max-width: 75%;
+        border-radius: 16px;
+      }
     }
   </style>
 </head>
@@ -336,8 +354,8 @@
         <h2>Vår første lange tur sammen – sol, surf, safari og rolige kvelder</h2>
         <div class="date-strip">15. januar – 3. februar</div>
         <p class="hero-note">
-          Første ordentlig lange reisen vår sammen. Jeg ville lage en liten guide
-          – mest fordi jeg gleder meg helt sykt til å bare ha deg for meg selv noen
+          Første ordentlig lange reisen vår sammen. Jeg ville lage en liten guide –
+          mest fordi jeg gleder meg helt sykt til å bare ha deg for meg selv noen
           uker. Sol, surf, god mat, god drikke og tid der vi bare kan være oss to.
           <span>Her er et forslag – resten justerer vi akkurat sånn som vi vil. 💚</span>
         </p>
